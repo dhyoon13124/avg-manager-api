@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
+const dayjs = require('dayjs');
 
-module.exports = class Orderschedule extends Sequelize.Model{
+module.exports = class OrderSchedule extends Sequelize.Model{
     static init(sequelize){
         return super.init({
             id : {
@@ -9,7 +10,7 @@ module.exports = class Orderschedule extends Sequelize.Model{
                 unique : true,
                 primaryKey: true,
             },
-            avg_id : {
+            agv_id : {
                 type: Sequelize.CHAR(50),
                 allowNull : false,
             },
@@ -29,17 +30,32 @@ module.exports = class Orderschedule extends Sequelize.Model{
                 type: Sequelize.CHAR(50),
                 allowNull: true,
             },
-            recieve_time: {
-                type: Sequelize.TIME,
+            receive_time: {
+                type: Sequelize.DATE,
                 allowNull: true,
+                get(columnKey) {
+                    const date = this.getDataValue(columnKey);
+                    if (!date) return '-';
+                    return dayjs(date).format('YYYY-MM-DD HH:mm:ss')
+                },
             },
             active_time: {
                 type: Sequelize.DATE,
                 allowNull: true,
+                get(columnKey) {
+                    const date = this.getDataValue(columnKey);
+                    if (!date) return '-';
+                    return dayjs(date).format('YYYY-MM-DD HH:mm:ss')
+                },
             },
             complete_time: {
                 type: Sequelize.DATE,
                 allowNull: true,
+                get(columnKey) {
+                    const date = this.getDataValue(columnKey);
+                    if (!date) return '-';
+                    return dayjs(date).format('YYYY-MM-DD HH:mm:ss')
+                },
             }
         },{
             sequelize,
