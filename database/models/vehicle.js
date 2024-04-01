@@ -4,40 +4,41 @@ module.exports = class Vehicle extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
-        VehicleID: {
+        id: {
           type: Sequelize.INTEGER,
           allowNull: false,
           unique: true,
+          autoIncrement: true,
         },
-        Delete: {
+        is_deleted: {
+          type: Sequelize.INTEGER,
+          defaultValue: 0,
+        },
+        preCall: {
           type: Sequelize.INTEGER,
           allowNull: true,
         },
-        Precall: {
+        maxLoadPort: {
           type: Sequelize.INTEGER,
           allowNull: true,
         },
-        MaxLoadPort: {
+        vehiclePort: {
           type: Sequelize.INTEGER,
           allowNull: true,
         },
-        VehiclePort: {
+        vehicleType: {
           type: Sequelize.INTEGER,
           allowNull: true,
         },
-        VehicleType: {
-          type: Sequelize.INTEGER,
-          allowNull: true,
-        },
-        Name: {
+        name: {
           type: Sequelize.CHAR(100),
           allowNull: true,
         },
-        HostName: {
+        hostName: {
           type: Sequelize.CHAR(50),
           allowNull: true,
         },
-        VehicleIP: {
+        vehicleIp: {
           type: Sequelize.CHAR(50),
           allowNull: true,
         },
@@ -46,8 +47,8 @@ module.exports = class Vehicle extends Sequelize.Model {
         sequelize,
         timestamps: false,
         underscored: true,
-        modelName: 'User',
-        tableName: 'users',
+        modelName: 'Vehicle',
+        tableName: 'Vehicle',
         paranoid: false,
         collate: 'utf8_general_ci',
         charset: 'utf8',
