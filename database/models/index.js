@@ -5,8 +5,8 @@ const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-const OrderSchedule = require('./orderschedule')
-const Vehicle = require('./vehicle')
+const OrderSchedule = require('./orderschedule');
+const Vehicle = require('./vehicle');
 
 // 테이블 생성
 OrderSchedule.init(sequelize);
@@ -14,8 +14,7 @@ Vehicle.init(sequelize);
 
 //db에 객체들 추가
 db.OrderSchedule = OrderSchedule;
-db.Vehicle = Vehicle
-
+db.Vehicle = Vehicle;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
