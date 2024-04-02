@@ -9,6 +9,7 @@ module.exports = class Vehicle extends Sequelize.Model {
           allowNull: false,
           unique: true,
           autoIncrement: true,
+          primaryKey: true,
         },
         is_deleted: {
           type: Sequelize.INTEGER,
