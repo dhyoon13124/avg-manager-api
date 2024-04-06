@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const dayjs = require('dayjs');
-
+  
 module.exports = class OrderSchedule extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
