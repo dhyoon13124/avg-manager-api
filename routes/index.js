@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const recentOrder = require('./recentOrder');
-const  vehicle = require('./vehicle');
+const vehicle = require('./vehicle');
 const point = require('./point');
 
 router.use('/recent-order', recentOrder);

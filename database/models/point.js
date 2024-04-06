@@ -8,7 +8,7 @@ module.exports = class Point extends Sequelize.Model{
                     type: Sequelize.INTEGER,
                     allowNull:false,
                     autoIncrement: true,
-                    primaryKey: true,                
+                    primaryKey: true,
                 },
                 xcoord: {
                     type: Sequelize.INTEGER,
@@ -42,10 +42,6 @@ module.exports = class Point extends Sequelize.Model{
                     type:Sequelize.CHAR(256),
                     allowNull:true,
                 },
-                remark: {
-                    type:Sequelize.CHAR(256),
-                    allowNull:true,
-                },
                 create_time: {
                     type: Sequelize.DATE,
                     allowNull:true,
@@ -54,7 +50,6 @@ module.exports = class Point extends Sequelize.Model{
                     type: Sequelize.DATE,
                     allowNull:true,
                 },
-
             },
             {
                 sequelize,

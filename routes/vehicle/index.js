@@ -5,3 +5,5 @@ const controllers = require('./controllers');
 const router = express.Router();
 
 router.get('/deleted-vehicle-count', controllers.getDeletedVehicleCount);
+
+module.exports = router;
