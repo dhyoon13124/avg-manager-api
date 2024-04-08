@@ -7,13 +7,13 @@ controllers.getDeletedVehicleCount = async (req, res) => {
 
   const orders = await Vehicle.count({
     where: {
-      ...(startDate && endDate
-        ? {
-          receive_time: {
-            [Op.between]: [startDate, endDate],
-          },
-        }
-        : {}),
+      // ...(startDate && endDate
+      //   ? {
+      //     receive_time: {
+      //       [Op.between]: [startDate, endDate],
+      //     },
+      //   }
+      //   : {}),
       is_deleted: true,
     },
   });
@@ -22,5 +22,15 @@ controllers.getDeletedVehicleCount = async (req, res) => {
     data: orders,
   });
 };
+
+
+controllers.getAllVehicles = async(req, res) => {
+  const vehicles = await Vehicle.findAll();
+  res.send({
+    data: vehicles,
+  });
+};
+
+
 
 module.exports = controllers;

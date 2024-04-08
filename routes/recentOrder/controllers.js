@@ -1,4 +1,5 @@
 const { OrderSchedule } = require('../../database/models');
+const {Vehicle} = require('../../database/models');
 const { Op } = require('sequelize');
 const controllers = {};
 
@@ -7,6 +8,17 @@ const DATE_TIME_TYPE = {
   COMPLETE_TIME: 'complete_time',
   RECEIVE_TIME: 'receive_time',
   
+};
+//투입된 차량 가져오는 쿼리문, Vehicle테이블에서 is_deleted가 1일때 20240408추가 
+controllers.getDeletedVehicleCount = async (req, res) => {
+  const vehicle = await Vehicle.count({
+    where:{
+      is_deleted:false,
+    },
+  });
+  res.send({
+    data:vehicle,
+  });
 };
 
 controllers.getAllRecentOrders = async (req, res) => {
@@ -28,7 +40,7 @@ controllers.getRecentOrders = async (req, res) => {
             },
           }
         : {}),
-    },
+    },    
   });
 
   res.send({
@@ -57,6 +69,7 @@ controllers.getCounts = async (req, res) => {
   res.send({
     data: counts,
   });
+
 };
 
 module.exports = controllers;
