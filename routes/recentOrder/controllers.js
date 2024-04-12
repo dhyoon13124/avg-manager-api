@@ -1,5 +1,6 @@
-const { OrderSchedule } = require('../../database/models');
+const { OrderSchedule, segment } = require('../../database/models');
 const {Vehicle} = require('../../database/models');
+const {Segment} = require('../../database/models')
 const { Op } = require('sequelize');
 const controllers = {};
 
@@ -27,6 +28,7 @@ controllers.getAllRecentOrders = async (req, res) => {
     data: orders,
   });
 };
+
 
 controllers.getRecentOrders = async (req, res) => {
   const { startDate, endDate } = req.query;

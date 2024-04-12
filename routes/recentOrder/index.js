@@ -13,6 +13,8 @@ router.get('/counts', controllers.getCounts);
 router.get('/inputAGV', controllers.getDeletedVehicleCount);    //20240408추가
 
 
+
+
 // router.get('/counts', controllers.getDeletedVehicleCount);
 
 
