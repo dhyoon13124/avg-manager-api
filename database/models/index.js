@@ -24,7 +24,7 @@ db.Vehicle = Vehicle;
 db.Point = Point;
 db.segment = Segment;
 
-//이거 왜 3개 있는지 모르겠음.. 원래 2개였는데 테이블 하나 추가하고 혹시나해서 하나 더넣음ㅋ
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

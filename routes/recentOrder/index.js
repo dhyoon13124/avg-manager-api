@@ -14,6 +14,8 @@ router.get('/inputAGV', controllers.getDeletedVehicleCount);    //20240408추가
 
 
 
+// router.get('/test', controllers.gettest);   //20240416테스트
+
 
 // router.get('/counts', controllers.getDeletedVehicleCount);
 

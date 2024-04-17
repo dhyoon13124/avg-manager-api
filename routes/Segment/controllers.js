@@ -1,9 +1,8 @@
 const {Segment} = require('../../database/models');
-
 const controllers = {};
 
-controllers.getSegment = async(req,res) => {
-    const segment = await Segment.finfall();
+controllers.getSegmentStatus = async (req, res) => {
+    const segment = await Segment.findAll();
     res.send({
         data: segment,
     });

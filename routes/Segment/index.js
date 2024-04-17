@@ -1,8 +1,9 @@
 const express = require('express');
 
-const controllers = require('./controllers');
+const controllers = require ('./controllers');
 
 const router = express.Router();
 
-router.get('/', controllers.getSegment);
+router.get('/getSegment', controllers.getSegmentStatus);
+
 module.exports = router;

@@ -1,6 +1,6 @@
-const { OrderSchedule, segment } = require('../../database/models');
+const { OrderSchedule} = require('../../database/models');
 const {Vehicle} = require('../../database/models');
-const {Segment} = require('../../database/models')
+
 const { Op } = require('sequelize');
 const controllers = {};
 
@@ -21,6 +21,14 @@ controllers.getDeletedVehicleCount = async (req, res) => {
     data:vehicle,
   });
 };
+
+
+// controllers.gettest = async (req, res) => {   //20240416 테스트
+//   const segment = await Segment.findAll();
+//   res.send({
+//     data:segment,
+//   });
+// };
 
 controllers.getAllRecentOrders = async (req, res) => {
   const orders = await OrderSchedule.findAll();
